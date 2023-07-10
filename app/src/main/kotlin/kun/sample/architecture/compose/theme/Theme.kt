@@ -1,4 +1,4 @@
-package kun.sample.architecture.ui.theme
+package kun.sample.architecture.compose.theme
 
 import android.app.Activity
 import android.os.Build
