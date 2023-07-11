@@ -19,9 +19,12 @@ import kun.sample.architecture.ui.navigation.homeBottomNavigationGraph
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HomeScreen(navController: NavHostController = rememberNavController()) {
+fun HomeScreen(
+    contentsNavController: NavHostController = rememberNavController(),
+    bottomNavController: NavHostController = rememberNavController()
+) {
     Scaffold(
-        bottomBar = { HomeBottomNavigation(navController) }
+        bottomBar = { HomeBottomNavigation(bottomNavController) }
     ) {
         NavHost(
             modifier = Modifier
@@ -30,10 +33,10 @@ fun HomeScreen(navController: NavHostController = rememberNavController()) {
                 .padding(
                     PaddingValues(it.calculateTopPadding(), 0.dp, 0.dp, it.calculateBottomPadding())
                 ),
-            navController = navController,
+            navController = bottomNavController,
             startDestination = NavScreen.HOME_ROUTE.route
         ) {
-            homeBottomNavigationGraph(navController)
+            homeBottomNavigationGraph(contentsNavController, bottomNavController)
         }
     }
 }

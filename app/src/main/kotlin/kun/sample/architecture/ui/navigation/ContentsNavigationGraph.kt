@@ -12,6 +12,6 @@ fun NavGraphBuilder.contentsNavigationGraph(
     startDestination: String = NavScreen.HOME.route
 ) {
     navigation(startDestination = startDestination, route = NavScreen.CONTENTS_ROUTE.route) {
-        composable(NavScreen.HOME.route) { HomeScreen() }
+        composable(NavScreen.HOME.route) { HomeScreen(navController) }
     }
 }
