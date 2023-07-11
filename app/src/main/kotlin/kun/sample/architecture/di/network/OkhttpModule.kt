@@ -17,13 +17,14 @@ object OkhttpModule {
     @Singleton
     @Provides
     @UnsplashClient
-    fun provideOkhttpUnSplash(): OkHttpClient =
+    fun provideOkhttpUnSplash(@UnsplashAccessKey authorization : String): OkHttpClient =
         OkHttpClient.Builder()
             .addInterceptor {
                 val original: Request = it.request()
 
                 val request: Request = original.newBuilder()
                     .addHeader("Content-Type", "application/json; charset=utf-8")
+                    .addHeader("Authorization", authorization)
                     .build()
                 it.proceed(request)
             }

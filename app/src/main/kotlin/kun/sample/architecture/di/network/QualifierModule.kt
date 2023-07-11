@@ -13,7 +13,17 @@ annotation class ConverterKotlinSerialization
 @Retention(AnnotationRetention.BINARY)
 annotation class UnsplashClient
 
+/** Retrofit */
+@Qualifier
+@Retention(AnnotationRetention.BINARY)
+annotation class UnsplashRetrofit
+
 /** Url */
 @Qualifier
 @Retention(AnnotationRetention.BINARY)
 annotation class UnsplashBaseUrl
+
+/** Const */
+@Qualifier
+@Retention(AnnotationRetention.BINARY)
+annotation class UnsplashAccessKey

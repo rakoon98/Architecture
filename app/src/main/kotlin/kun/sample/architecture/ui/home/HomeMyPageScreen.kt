@@ -4,6 +4,6 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 
 @Composable
-fun HomeMainScreen() {
-    Text(text = "HOME")
+fun HomeMyPageScreen() {
+    Text(text = "MyPage")
 }

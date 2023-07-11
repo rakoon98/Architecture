@@ -28,6 +28,7 @@ object RetrofitModule {
 
     @Provides
     @Singleton
+    @UnsplashRetrofit
     fun provideRetrofitUnsplash(
         @ConverterKotlinSerialization factory: Converter.Factory,
         @UnsplashClient okHttpClient: OkHttpClient,
