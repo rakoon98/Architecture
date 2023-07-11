@@ -1,4 +1,4 @@
-package kun.sample.architecture
+package kun.sample.architecture.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity

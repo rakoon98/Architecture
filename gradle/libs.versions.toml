@@ -13,6 +13,7 @@ activity-compose = "1.7.2"
 
 kotlin-bom = "1.8.21"
 compose-bom = "2022.10.00"
+compose-navigation = "2.5.3"
 
 # Hilt
 hilt = "2.44.2"
@@ -22,6 +23,10 @@ hiltExt = "1.0.0"
 okHttp = "4.10.0"
 retrofit = "2.9.0"
 retrofitKotlinxSerializationJson = "1.0.0"
+okHttpProfiler = "1.0.8"
+jvm = "1.9.0"
+plugin-serialization = "1.9.0"
+serializationJson = "1.5.1"
 
 [libraries]
 core-ktx = { module = "androidx.core:core-ktx", version.ref = "android-core" }
@@ -42,7 +47,7 @@ compose-ui = { module = "androidx.compose.ui:ui" }
 compose-graphics = { module = "androidx.compose.ui:ui-graphics" }
 compose-preview = { module = "androidx.compose.ui:ui-tooling-preview" }
 compose-material3 = { module = "androidx.compose.material3:material3" }
-compose-navigation = { module = "androidx.navigation:navigation-compose" }
+compose-navigation = { module = "androidx.navigation:navigation-compose", version.ref = "compose-navigation" }
 compose-foundation = { module = "androidx.compose.foundation:foundation" }
 
 compose-ui-test-junit = { module = "androidx.compose.ui:ui-test-junit4" }
@@ -61,6 +66,9 @@ hilt-ext-work = { module = "androidx.hilt:hilt-work", version.ref = "hiltExt" }
 okhttp-logging = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okHttp" }
 retrofit-core = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 retrofit-kotlin-serialization = { group = "com.jakewharton.retrofit", name = "retrofit2-kotlinx-serialization-converter", version.ref = "retrofitKotlinxSerializationJson" }
+org-jetbrains-kotlinx-kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serializationJson" }
+localebro-okhttpprofiler = { module = "com.localebro:okhttpprofiler", version.ref = "okHttpProfiler" }
+
 
 [bundles]
 compose = [
@@ -82,12 +90,20 @@ junit = [
 network = [
     "okhttp-logging",
     "retrofit-core",
-    "retrofit-kotlin-serialization"
+    "retrofit-kotlin-serialization",
+    "org-jetbrains-kotlinx-kotlinx-serialization-json",
+    "localebro-okhttpprofiler"
 ]
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
 android-library = { id = "com.android.library", version.ref = "comAndroidLibrary" }
 jetbrain-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "orgJetbrainsKotlinAndroid" }
+
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin-bom" }
+
+jvm = { id = "jvm", version.ref = "jvm" }
+plugin-serialization = { id = "plugin.serialization", version.ref = "plugin-serialization" }
+
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin-bom" }
