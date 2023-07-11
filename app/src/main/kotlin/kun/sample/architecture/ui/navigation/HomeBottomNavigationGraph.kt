@@ -13,5 +13,7 @@ fun NavGraphBuilder.homeBottomNavigationGraph(
 ) {
     navigation(startDestination = startDestination, route = NavScreen.HOME_ROUTE.route) {
         composable(NavScreen.HOME_MAIN.route) { HomeMainScreen() }
+        composable(NavScreen.HOME_FAVORITE.route) { HomeMainScreen() }
+        composable(NavScreen.HOME_MYPAGE.route) { HomeMainScreen() }
     }
 }

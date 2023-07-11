@@ -19,7 +19,6 @@ fun ArchitectureNavHost (
         startDestination = startDestination,
     ) {
         contentsNavigationGraph(navController)
-        homeBottomNavigationGraph(navController)
     }
 }
 

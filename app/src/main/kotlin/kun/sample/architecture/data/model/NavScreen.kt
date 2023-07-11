@@ -7,4 +7,6 @@ sealed class NavScreen(val route : String) {
 
     object HOME_ROUTE: NavScreen("homeRoute")
     object HOME_MAIN: NavScreen("homeMain")
+    object HOME_FAVORITE: NavScreen("homeFavorite")
+    object HOME_MYPAGE: NavScreen("homeMyPage")
 }
