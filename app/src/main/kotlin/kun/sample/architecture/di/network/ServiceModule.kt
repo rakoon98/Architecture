@@ -4,7 +4,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import kun.sample.architecture.data.remote.UnSplashService
+import kun.sample.architecture.data.remote.service.UnSplashService
 import retrofit2.Retrofit
 
 @Module
