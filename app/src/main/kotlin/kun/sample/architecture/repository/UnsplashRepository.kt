@@ -10,7 +10,7 @@ interface UnsplashRepository {
 
     suspend fun getPhotos(
         page : Int = 1,
-        perPage : Int = 15,
+        perPage : Int = 30,
         orderBy : UnsplashOrderType = UnsplashOrderType.LATEST
     ): Flow<ApiResult<List<UnsplashPhotoModel>>>
 

@@ -4,15 +4,20 @@ import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.onCompletion
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
+import kun.sample.architecture.data.remote.ApiResult
+import kun.sample.architecture.data.remote.model.UnsplashPhotoModel
+import kun.sample.architecture.data.type.UnsplashOrderType
 import kun.sample.architecture.repository.UnsplashRepository
-import kun.sample.architecture.repository.UnsplashRepositoryImpl
 import javax.inject.Inject
 
 @HiltViewModel
@@ -20,14 +25,24 @@ class UnsplashViewModel @Inject constructor(
     private val unsplashRepository: UnsplashRepository
 ) : ViewModel() {
 
-    fun getPhotos() = viewModelScope.launch {
-        unsplashRepository.getPhotos()
-            .onStart { Log.d("데이터체크", "onStart") }
-            .catch { err -> Log.d("데이터체크", "에러 : $err") }
+    private val _imageFlow : MutableStateFlow<List<UnsplashPhotoModel>> = MutableStateFlow(emptyList())
+    val imageFlow : StateFlow<List<UnsplashPhotoModel>> get() = _imageFlow.asStateFlow()
+
+    fun getPhotos(page : Int = 1, orderBy : UnsplashOrderType = UnsplashOrderType.LATEST) = viewModelScope.launch {
+        unsplashRepository.getPhotos(page = page, orderBy = orderBy)
+            .onStart {  }
+            .catch { err ->  }
             .onEach {
-                Log.d("데이터체크", "onEach : $it")
+                when (it) {
+                    is ApiResult.Success -> {
+                        _imageFlow.value.toMutableList().apply {
+                            addAll(it.data)
+                        }.also { result -> _imageFlow.emit((result)) }
+                    }
+                    else -> {}
+                }
             }
-            .onCompletion { Log.d("데이터체크", "onCompletion") }
+            .onCompletion {  }
             .stateIn(this, SharingStarted.Eagerly, false)
     }
 

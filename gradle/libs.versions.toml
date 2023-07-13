@@ -12,8 +12,12 @@ lifecycle-runtime-ktx = "2.6.1"
 activity-compose = "1.7.2"
 
 kotlin-bom = "1.8.21"
-compose-bom = "2022.10.00"
+
+# Compose
+compose-bom = "2023.01.00"
 compose-navigation = "2.5.3"
+compose-coil = "2.4.0"
+compose-runtime-lifecycle = "2.5.1"
 
 # Hilt
 hilt = "2.44.2"
@@ -50,10 +54,13 @@ compose-material3 = { module = "androidx.compose.material3:material3" }
 compose-navigation = { module = "androidx.navigation:navigation-compose", version.ref = "compose-navigation" }
 compose-foundation = { module = "androidx.compose.foundation:foundation" }
 compose-material = { module = "androidx.compose.material:material" }
+compose-runtime-lifecycle = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "compose-runtime-lifecycle" }
 
 compose-ui-test-junit = { module = "androidx.compose.ui:ui-test-junit4" }
 compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
 compose-ui-test-manifest = { module = "androidx.compose.ui:ui-test-manifest" }
+
+compose-coil = { module = "io.coil-kt:coil-compose", version.ref = "compose-coil" }
 
 # Hilt
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
@@ -81,7 +88,9 @@ compose = [
     "compose-material3",
     "compose-navigation",
     "compose-foundation",
-    "compose-material"
+    "compose-material",
+    "compose-coil",
+    "compose-runtime-lifecycle"
 ]
 
 junit = [

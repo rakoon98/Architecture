@@ -11,7 +11,7 @@ interface UnSplashApiService {
     @GET("photos")
     suspend fun getPhotos(
         @Query("page") page : Int = 1,
-        @Query("per_page") perPage : Int = 15,
+        @Query("per_page") perPage : Int = 30,
         @Query("order_by") orderBy : String = UnsplashOrderType.LATEST.orderName
     ) : ApiResult<List<UnsplashPhotoModel>>
 
