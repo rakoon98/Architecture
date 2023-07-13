@@ -1,4 +1,4 @@
-package kun.sample.architecture.ui.navigation
+package kun.sample.architecture.ui.ui_container.navigation
 
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.material.BottomNavigation
@@ -9,6 +9,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.graphics.Color
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
@@ -18,7 +19,7 @@ import kun.sample.architecture.data.internal.NavScreen
 
 @Composable
 fun HomeBottomNavigation(navController : NavController) {
-    BottomNavigation {
+    BottomNavigation(backgroundColor = Color.White, contentColor = Color.Black) {
         val navBackStackEntry by navController.currentBackStackEntryAsState()
         val currentDestination = navBackStackEntry?.destination
 
@@ -59,7 +60,7 @@ fun RowScope.HomeBottomItem(
 
 val getBottomItems get() =
     listOf<BottomNavItem>(
-        BottomNavItem("home", NavScreen.HOME_MAIN),
-        BottomNavItem("favorite", NavScreen.HOME_FAVORITE),
-        BottomNavItem("mypage", NavScreen.HOME_MYPAGE)
+        BottomNavItem("home", NavScreen.Home),
+        BottomNavItem("favorite", NavScreen.Favorite),
+        BottomNavItem("mypage", NavScreen.MyPage)
     )

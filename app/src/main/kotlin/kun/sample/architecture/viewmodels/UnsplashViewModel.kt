@@ -37,7 +37,8 @@ class UnsplashViewModel @Inject constructor(
                     is ApiResult.Success -> {
                         _imageFlow.value.toMutableList().apply {
                             addAll(it.data)
-                        }.also { result -> _imageFlow.emit((result)) }
+                        }.distinctBy { model -> model.id }
+                            .also { result -> _imageFlow.emit((result)) }
                     }
                     else -> {}
                 }

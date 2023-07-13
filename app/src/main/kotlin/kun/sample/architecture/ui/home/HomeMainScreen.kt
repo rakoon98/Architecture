@@ -12,13 +12,16 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.navigation.NavController
+import kun.sample.architecture.data.internal.NavScreen
 import kun.sample.architecture.ui.home.contents.HomeMainImgView
 import kun.sample.architecture.viewmodels.UnsplashViewModel
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun HomeMainScreen(
-    unsplashViewModel : UnsplashViewModel = hiltViewModel()
+    unsplashViewModel : UnsplashViewModel = hiltViewModel(),
+    toDetailScreen : (id : String) -> Unit
 ) {
     val imageList by unsplashViewModel.imageFlow.collectAsStateWithLifecycle(emptyList())
 
@@ -29,7 +32,9 @@ fun HomeMainScreen(
         horizontalArrangement = Arrangement.spacedBy(2.dp)
     ) {
         itemsIndexed(imageList) { _, model ->
-            HomeMainImgView(item = model)
+            HomeMainImgView(item = model) { clickItem ->
+                toDetailScreen.invoke(clickItem.id)
+            }
         }
     }
 

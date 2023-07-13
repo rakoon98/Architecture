@@ -2,11 +2,15 @@ package kun.sample.architecture.data.internal
 
 sealed class NavScreen(val route : String) {
 
-    object CONTENTS_ROUTE: NavScreen("homeRoute")
-    object HOME: NavScreen("home")
+    object MainRoute: NavScreen("mainRoute")
+    object Home: NavScreen("main")
+    object Favorite: NavScreen("favorite")
+    object MyPage: NavScreen("myPage")
 
-    object HOME_ROUTE: NavScreen("homeRoute")
-    object HOME_MAIN: NavScreen("homeMain")
-    object HOME_FAVORITE: NavScreen("homeFavorite")
-    object HOME_MYPAGE: NavScreen("homeMyPage")
+    object ImgDetail : NavScreen("imgDetail/{id}") {
+        fun toDetailRoute(id : String) : String {
+            return "imgDetail/$id"
+        }
+    }
+
 }
