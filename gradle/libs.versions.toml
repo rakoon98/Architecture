@@ -62,6 +62,7 @@ hilt-android-compiler = { module = "com.google.dagger:hilt-android-compiler", ve
 hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt" }
 hilt-navigation-fragment = { module = "androidx.hilt:hilt-navigation-fragment", version.ref = "hiltExt" }
 hilt-ext-work = { module = "androidx.hilt:hilt-work", version.ref = "hiltExt" }
+hilt-viewmodel = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltExt" }
 
 # Network
 okhttp-logging = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okHttp" }

@@ -3,6 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
     id("com.google.dagger.hilt.android")
+    kotlin("plugin.serialization") version "1.8.21"
 
 }
 
@@ -70,6 +71,7 @@ dependencies {
     debugImplementation(libs.compose.ui.test.manifest)
 
     implementation(libs.hilt.android)
+    implementation(libs.hilt.viewmodel)
     kapt(libs.hilt.compiler)
 
 }

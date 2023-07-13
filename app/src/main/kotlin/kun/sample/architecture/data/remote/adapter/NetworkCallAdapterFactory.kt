@@ -1,5 +1,6 @@
 package kun.sample.architecture.data.remote.adapter
 
+import android.util.Log
 import kun.sample.architecture.data.remote.ApiResult
 import retrofit2.Call
 import retrofit2.CallAdapter
@@ -25,7 +26,7 @@ class NetworkCallAdapterFactory : CallAdapter.Factory() {
         }
 
         val wrapperType = getParameterUpperBound(0, returnType)
-        if (getRawType(returnType) != ApiResult::class.java)
+        if (getRawType(wrapperType) != ApiResult::class.java)
             return null
 
         check(wrapperType is ParameterizedType) {

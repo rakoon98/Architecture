@@ -1,7 +1,11 @@
 package kun.sample.architecture.data.remote.adapter
 
+import android.util.Log
+import kotlinx.serialization.json.Json
 import kun.sample.architecture.data.remote.ApiResult
+import kun.sample.architecture.di.network.RetrofitModule.jsonSerializationBuilder
 import okhttp3.Request
+import okio.IOException
 import okio.Timeout
 import retrofit2.Call
 import retrofit2.Callback
@@ -23,6 +27,13 @@ class ApiResultCall<R> constructor(
         }
 
         override fun onFailure(call: Call<R>, t: Throwable) {
+            val error = if (t is IOException) {
+                ApiResult.Failure.NetworkError(t)
+            } else {
+                ApiResult.Failure.UnknownError(t)
+            }
+
+            callback.onResponse(this@ApiResultCall, Response.success(error))
         }
     })
 
@@ -55,16 +66,14 @@ class ApiResultCall<R> constructor(
             return ApiResult.Success(body)
         }
 
-        return when (successType == Unit::class.java) {
-            true  -> {
+        return when (successType) {
+            Unit::class.java -> {
                 @Suppress("UNCHECKED_CAST")
                 ApiResult.Success(Unit as R)
             }
-            false -> {
-                ApiResult.Failure.UnknownError(
-                    IllegalStateException("Body null or empty but, Defined Not Of Unit Type -> Need ApiResult<Unit> Defined")
-                )
-            }
+            else -> ApiResult.Failure.UnknownError(
+                IllegalStateException("Body null or empty but, Defined Not Of Unit Type -> Need ApiResult<Unit> Defined")
+            )
         }
     }
 

@@ -1,5 +1,7 @@
 package kun.sample.architecture.data.remote
 
+import kotlinx.serialization.Serializable
+
 /**
  * @Success : 성공
  * @HttpError : 서버로 부터 api 실패

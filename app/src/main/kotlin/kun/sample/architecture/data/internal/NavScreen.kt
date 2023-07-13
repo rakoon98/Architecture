@@ -1,4 +1,4 @@
-package kun.sample.architecture.data.model
+package kun.sample.architecture.data.internal
 
 sealed class NavScreen(val route : String) {
 

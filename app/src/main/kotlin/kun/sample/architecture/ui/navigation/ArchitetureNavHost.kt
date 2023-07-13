@@ -5,7 +5,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
-import kun.sample.architecture.data.model.NavScreen
+import kun.sample.architecture.data.internal.NavScreen
 
 @Composable
 fun ArchitectureNavHost (

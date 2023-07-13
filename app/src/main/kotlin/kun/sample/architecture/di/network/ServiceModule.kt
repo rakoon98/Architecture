@@ -4,7 +4,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import kun.sample.architecture.data.remote.service.UnSplashService
+import kun.sample.architecture.data.remote.service.UnSplashApiService
 import retrofit2.Retrofit
 
 @Module
@@ -12,8 +12,8 @@ import retrofit2.Retrofit
 object ServiceModule {
 
     @Provides
-    fun provideUnSplashService(@UnsplashRetrofit retrofit: Retrofit): UnSplashService =
-        retrofit.create(UnSplashService::class.java)
+    fun provideUnSplashService(@UnsplashRetrofit retrofit: Retrofit): UnSplashApiService =
+        retrofit.create(UnSplashApiService::class.java)
 
 
 }

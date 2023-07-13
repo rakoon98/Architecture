@@ -5,8 +5,10 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import kun.sample.architecture.data.remote.adapter.NetworkCallAdapterFactory
 import kun.sample.architecture.di.network.RetrofitModule.jsonSerializationBuilder
 import okhttp3.MediaType.Companion.toMediaType
+import retrofit2.CallAdapter
 import retrofit2.Converter
 
 @Module
@@ -17,6 +19,12 @@ object FactoryModule {
     @ConverterKotlinSerialization
     fun provideKotlinConverterFactory(): Converter.Factory {
         return jsonSerializationBuilder.asConverterFactory("application/json".toMediaType())
+    }
+
+    @Provides
+    @CustomCallAdapterFactory
+    fun provideCallAdapterFactory() : CallAdapter.Factory {
+        return NetworkCallAdapterFactory()
     }
 
 }

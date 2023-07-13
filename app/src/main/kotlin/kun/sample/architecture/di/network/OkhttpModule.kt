@@ -5,8 +5,10 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.Request
+import okhttp3.Response
 import okhttp3.logging.HttpLoggingInterceptor
 import javax.inject.Singleton
 
@@ -17,24 +19,30 @@ object OkhttpModule {
     @Singleton
     @Provides
     @UnsplashClient
-    fun provideOkhttpUnSplash(@UnsplashAccessKey authorization : String): OkHttpClient =
+    fun provideOkhttpUnsplash(@UnsplashAccessKey authorization: String): OkHttpClient =
         OkHttpClient.Builder()
-            .addInterceptor {
-                val original: Request = it.request()
+            .run {
+                addInterceptor(HeaderInterceptor(authorization))
+                addInterceptor(
+                    HttpLoggingInterceptor().apply {
+                        setLevel(HttpLoggingInterceptor.Level.BASIC)
+                    }
+                )
+                addInterceptor(OkHttpProfilerInterceptor())
+            }
+            .build()
 
-                val request: Request = original.newBuilder()
+    class HeaderInterceptor(private val authorization: String) : Interceptor {
+        override fun intercept(chain: Interceptor.Chain): Response =
+            with(chain) {
+                val request: Request = request().newBuilder()
+                    .addHeader("Accept-Version", "v1")
                     .addHeader("Content-Type", "application/json; charset=utf-8")
                     .addHeader("Authorization", authorization)
                     .build()
-                it.proceed(request)
-            }
-            .addInterceptor(
-                HttpLoggingInterceptor().apply {
-                    setLevel(HttpLoggingInterceptor.Level.BASIC)
-                }
-            )
-            .addInterceptor(OkHttpProfilerInterceptor())
-            .build()
 
+                proceed(request)
+            }
+    }
 
 }

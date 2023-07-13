@@ -5,8 +5,7 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
-import androidx.navigation.compose.rememberNavController
-import kun.sample.architecture.data.model.NavScreen
+import kun.sample.architecture.data.internal.NavScreen
 import kun.sample.architecture.ui.home.HomeFavoriteScreen
 import kun.sample.architecture.ui.home.HomeMainScreen
 import kun.sample.architecture.ui.home.HomeMyPageScreen

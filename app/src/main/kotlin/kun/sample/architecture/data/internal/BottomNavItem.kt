@@ -1,4 +1,4 @@
-package kun.sample.architecture.data.model
+package kun.sample.architecture.data.internal
 
 data class BottomNavItem(
     val title : String,

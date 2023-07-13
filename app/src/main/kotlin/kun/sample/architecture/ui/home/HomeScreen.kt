@@ -13,7 +13,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
-import kun.sample.architecture.data.model.NavScreen
+import kun.sample.architecture.data.internal.NavScreen
 import kun.sample.architecture.ui.navigation.HomeBottomNavigation
 import kun.sample.architecture.ui.navigation.homeBottomNavigationGraph
 

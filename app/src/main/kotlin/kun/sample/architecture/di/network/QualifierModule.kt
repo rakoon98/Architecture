@@ -7,6 +7,10 @@ import javax.inject.Qualifier
 @Retention(AnnotationRetention.BINARY)
 annotation class ConverterKotlinSerialization
 
+@Qualifier
+@Retention(AnnotationRetention.BINARY)
+annotation class CustomCallAdapterFactory
+
 
 /** Client */
 @Qualifier
