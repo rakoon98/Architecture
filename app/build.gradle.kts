@@ -74,4 +74,8 @@ dependencies {
     implementation(libs.hilt.viewmodel)
     kapt(libs.hilt.compiler)
 
+    implementation(libs.room.runtime)
+    implementation(libs.room.ktx)
+    kapt(libs.room.compiler)
+
 }

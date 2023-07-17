@@ -32,6 +32,10 @@ jvm = "1.9.0"
 plugin-serialization = "1.9.0"
 serializationJson = "1.5.1"
 
+#Room
+room = "2.5.0"
+
+
 [libraries]
 core-ktx = { module = "androidx.core:core-ktx", version.ref = "android-core" }
 lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle-runtime-ktx" }
@@ -77,6 +81,11 @@ retrofit-core = { group = "com.squareup.retrofit2", name = "retrofit", version.r
 retrofit-kotlin-serialization = { group = "com.jakewharton.retrofit", name = "retrofit2-kotlinx-serialization-converter", version.ref = "retrofitKotlinxSerializationJson" }
 org-jetbrains-kotlinx-kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serializationJson" }
 localebro-okhttpprofiler = { module = "com.localebro:okhttpprofiler", version.ref = "okHttpProfiler" }
+
+# Room
+room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
 
 
 [bundles]
