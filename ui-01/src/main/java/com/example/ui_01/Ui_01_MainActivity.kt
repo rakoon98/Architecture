@@ -18,29 +18,8 @@ class Ui_01_MainActivity : ComponentActivity() {
         setContent {
             ArchitectureTheme {
                 // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("UI_01")
-                }
+
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    ArchitectureTheme {
-        Greeting("Android")
     }
 }

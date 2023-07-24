@@ -1,7 +1,6 @@
 package com.example.featurecontroller.di
 
 import android.content.Context
-import com.example.featurecontroller.controller.UiController
 import com.example.featurecontroller.deeplink.DeeplinkHandler
 import com.example.featurecontroller.deeplink.DeeplinkProcessor
 import com.example.featurecontroller.deeplink.DefaultDeeplinkHandler
