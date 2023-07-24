@@ -7,7 +7,6 @@ plugins {
     id("kotlin-kapt")
     id("com.google.dagger.hilt.android")
     kotlin("plugin.serialization") version "1.8.21"
-
 }
 
 android {
@@ -81,4 +80,6 @@ dependencies {
     kapt(libs.room.compiler)
 
     implementation(project(":featurecontroller"))
+    implementation(project(":ui-01"))
+    implementation(project(":ui-02"))
 }

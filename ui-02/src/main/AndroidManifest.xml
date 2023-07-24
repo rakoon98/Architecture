@@ -12,6 +12,7 @@
             android:name=".Ui_02_MainActivity"
             android:exported="true"
             android:label="@string/app_name"
+            android:autoVerify="true"
             android:theme="@style/Theme.Architecture">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
