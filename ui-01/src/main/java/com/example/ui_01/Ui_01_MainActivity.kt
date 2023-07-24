@@ -22,7 +22,7 @@ class Ui_01_MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Android")
+                    Greeting("UI_01")
                 }
             }
         }
