@@ -1,5 +1,6 @@
 package kun.sample.architecture.ui.ui_container.state
 
+import android.app.Activity
 import android.util.Log
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.Composable
@@ -13,6 +14,7 @@ import kun.sample.architecture.data.internal.NavScreen
 
 @Composable
 fun rememberAppState(
+//    windowSizeClass: WindowSizeClass,
     scaffoldState: SnackbarHostState = remember { SnackbarHostState() },
     navController: NavHostController = rememberNavController(),
 ) : AppState {
@@ -38,8 +40,7 @@ class AppState constructor(
 
     val shouldShowBottomBar: Boolean
         @Composable get() = navController
-            .currentBackStackEntryAsState().value?.destination?.route.also { Log.d("데이터체크","current route : $it") } in
-                getBottomItems.map { it.route.route }
+            .currentBackStackEntryAsState().value?.destination?.route in getBottomItems.map { it.route.route }
 
     fun navigate(route : String) {
         navController.navigate(route)

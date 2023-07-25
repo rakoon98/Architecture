@@ -10,6 +10,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.ui_01.ui.ArchitectureNavHost
 import com.example.ui_01.ui.theme.ArchitectureTheme
 
 class Ui_01_MainActivity : ComponentActivity() {
@@ -18,7 +19,7 @@ class Ui_01_MainActivity : ComponentActivity() {
         setContent {
             ArchitectureTheme {
                 // A surface container using the 'background' color from the theme
-
+                ArchitectureNavHost()
             }
         }
     }

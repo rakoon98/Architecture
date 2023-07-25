@@ -41,7 +41,6 @@ class MainActivity : ComponentActivity() {
         intent.data?.toString()?.let {
             if(it.startsWith(APP_SCHEME_HOST)){
                 deeplinkHandler.process(it)
-                finish()
             }
         }
     }
