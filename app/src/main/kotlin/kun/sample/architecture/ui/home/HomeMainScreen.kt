@@ -1,14 +1,18 @@
 package kun.sample.architecture.ui.home
 
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.staggeredgrid.LazyVerticalStaggeredGrid
 import androidx.compose.foundation.lazy.staggeredgrid.StaggeredGridCells
 import androidx.compose.foundation.lazy.staggeredgrid.itemsIndexed
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -26,6 +30,9 @@ fun HomeMainScreen(
     val imageList by unsplashViewModel.imageFlow.collectAsStateWithLifecycle(emptyList())
 
     LazyVerticalStaggeredGrid(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(Color.Magenta),
         columns = StaggeredGridCells.Fixed(3),
         contentPadding = PaddingValues(top = 2.dp),
         verticalItemSpacing = 2.dp,

@@ -1,11 +1,13 @@
 package kun.sample.architecture.ui.ui_container.navigation
 
+import android.content.Context
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.compose.NavHost
 import kun.sample.architecture.data.internal.NavScreen
 import kun.sample.architecture.ui.ui_container.state.AppState
@@ -15,7 +17,8 @@ import kun.sample.architecture.ui.ui_container.state.AppState
 fun ArchitectureNavHost (
     modifier : Modifier = Modifier,
     startDestination : String = NavScreen.MainRoute.route,
-    appState: AppState
+    appState: AppState,
+    context : Context = LocalContext.current
 ){
     Scaffold(
         snackbarHost = { SnackbarHost(appState.snackBarHostState) },
@@ -29,7 +32,7 @@ fun ArchitectureNavHost (
             navController = appState.navController,
             startDestination = startDestination,
         ) {
-            homeBottomNavigationGraph(appState)
+            homeBottomNavigationGraph(appState, context = context)
         }
     }
 }
