@@ -85,7 +85,5 @@ dependencies {
     implementation(libs.room.ktx)
     kapt(libs.room.compiler)
 
-    implementation(project(":featurecontroller"))
-    implementation(project(":ui-01"))
-    implementation(project(":ui-02"))
+    implementation(project(":core:featurecontroller"))
 }

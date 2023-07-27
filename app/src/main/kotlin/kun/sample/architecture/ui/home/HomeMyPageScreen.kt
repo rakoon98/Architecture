@@ -9,7 +9,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
-import com.example.featurecontroller.model.ControllerType
+import com.example.core.featurecontroller.model.ControllerType
 
 @Composable
 fun HomeMyPageScreen(

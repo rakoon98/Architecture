@@ -5,8 +5,8 @@ import android.os.Bundle
 import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import com.example.featurecontroller.deeplink.DeeplinkHandler
-import com.example.featurecontroller.model.APP_SCHEME_HOST
+import com.example.core.featurecontroller.deeplink.DeeplinkHandler
+import com.example.core.featurecontroller.model.APP_SCHEME_HOST
 import dagger.hilt.android.AndroidEntryPoint
 import kun.sample.architecture.compose.theme.ArchitectureTheme
 import kun.sample.architecture.ui.ui_container.navigation.ArchitectureNavHost

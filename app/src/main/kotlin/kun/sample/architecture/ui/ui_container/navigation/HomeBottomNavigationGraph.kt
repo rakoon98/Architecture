@@ -1,15 +1,11 @@
 package kun.sample.architecture.ui.ui_container.navigation
 
 import android.content.Context
-import android.content.Intent
-import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavType
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
 import androidx.navigation.navArgument
-import com.example.ui_01.Ui_01_MainActivity
-import com.example.ui_02.Ui_02_MainActivity
 import kun.sample.architecture.data.internal.NavScreen
 import kun.sample.architecture.ui.detail.ImgDetailScreen
 import kun.sample.architecture.ui.home.HomeFavoriteScreen
@@ -30,12 +26,12 @@ fun NavGraphBuilder.homeBottomNavigationGraph(
         }
         composable(NavScreen.Favorite.route) {
             HomeFavoriteScreen(onNext = {
-                context.startActivity(Intent(context, Ui_01_MainActivity::class.java))
+//                context.startActivity(Intent(context, Ui_01_MainActivity::class.java))
             })
         }
         composable(NavScreen.MyPage.route) {
             HomeMyPageScreen(onNext = {
-                context.startActivity(Intent(context, Ui_02_MainActivity::class.java))
+//                context.startActivity(Intent(context, Ui_02_MainActivity::class.java))
             })
         }
         composable(

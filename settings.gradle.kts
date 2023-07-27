@@ -35,6 +35,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "Architecture"
 include(":app")
-include(":ui-01")
-include(":ui-02")
-include(":featurecontroller")
+include(":feature:ui-01")
+include(":feature:ui-02")
+include(":core:featurecontroller")
