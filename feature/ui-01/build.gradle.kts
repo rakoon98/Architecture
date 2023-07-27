@@ -5,6 +5,8 @@ plugins {
 
 android {
     namespace = "com.example.ui_01"
+    compileSdk = 33
+
     defaultConfig {
         minSdk = 26
         targetSdk = 33
