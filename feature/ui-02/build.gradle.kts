@@ -5,7 +5,10 @@ plugins {
 
 android {
     namespace = "com.example.ui_02"
-    compileSdk = 33
+    defaultConfig {
+        minSdk = 26
+        targetSdk = 33
+    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
@@ -23,6 +26,7 @@ android {
 }
 
 dependencies {
+    implementation(libs.bundles.junit)
 
     implementation("androidx.core:core-ktx:1.8.0")
     implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
