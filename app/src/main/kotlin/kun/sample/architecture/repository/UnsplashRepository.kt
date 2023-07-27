@@ -1,10 +1,9 @@
 package kun.sample.architecture.repository
 
 import kotlinx.coroutines.flow.Flow
-import kun.sample.architecture.data.remote.ApiResult
+import com.example.core.network.ApiResult
 import kun.sample.architecture.data.remote.model.UnsplashPhotoModel
-import kun.sample.architecture.data.type.UnsplashOrderType
-import retrofit2.http.Query
+import com.example.core.type.UnsplashOrderType
 
 interface UnsplashRepository {
 

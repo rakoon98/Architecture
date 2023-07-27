@@ -38,7 +38,7 @@
 
                 <data
                     android:scheme="architecture"
-                    android:host="com.example.deeplink"/>
+                    android:host="com.example.deeplink" />
             </intent-filter>
         </activity>
 

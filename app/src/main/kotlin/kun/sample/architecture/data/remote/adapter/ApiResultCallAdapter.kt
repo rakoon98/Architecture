@@ -1,6 +1,6 @@
 package kun.sample.architecture.data.remote.adapter
 
-import kun.sample.architecture.data.remote.ApiResult
+import com.example.core.network.ApiResult
 import retrofit2.Call
 import retrofit2.CallAdapter
 import java.lang.reflect.Type

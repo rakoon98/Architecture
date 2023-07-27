@@ -1,4 +1,4 @@
-package kun.sample.architecture.data.type
+package com.example.core.type
 
 enum class UnsplashOrderType(val orderName : String) {
     LATEST("latest"), // default

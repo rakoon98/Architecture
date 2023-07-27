@@ -9,7 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.compose.NavHost
-import kun.sample.architecture.data.internal.NavScreen
+import com.example.core.model.NavScreen
 import kun.sample.architecture.ui.ui_container.state.AppState
 
 @OptIn(ExperimentalMaterial3Api::class)

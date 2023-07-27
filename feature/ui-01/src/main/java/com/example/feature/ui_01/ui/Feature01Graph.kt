@@ -86,7 +86,8 @@ fun Depth1View(
                 )
             }
             Button(onClick = {
-                context.startActivity(Intent().apply { setClassName(context, "com.example.ui_02.Ui_02_MainActivity") })
+                context.startActivity(Intent().apply { setClassName(context, "com.example.feature.ui_02.Ui_02_MainActivity") })
+//                context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://com.example.deeplink/ui02")))
             }) {
                 Text(
                     modifier = Modifier.wrapContentSize(),

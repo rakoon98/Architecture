@@ -1,6 +1,4 @@
-package kun.sample.architecture.data.remote
-
-import kotlinx.serialization.Serializable
+package com.example.core.network
 
 /**
  * @Success : 성공

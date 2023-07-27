@@ -4,10 +4,10 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
-import kun.sample.architecture.data.remote.ApiResult
+import com.example.core.network.ApiResult
 import kun.sample.architecture.data.remote.model.UnsplashPhotoModel
 import kun.sample.architecture.data.remote.service.UnSplashApiService
-import kun.sample.architecture.data.type.UnsplashOrderType
+import com.example.core.type.UnsplashOrderType
 import javax.inject.Inject
 import javax.inject.Singleton
 

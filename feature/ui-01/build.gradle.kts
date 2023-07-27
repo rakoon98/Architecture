@@ -29,7 +29,7 @@ android {
 
 dependencies {
     implementation(libs.bundles.junit)
-     implementation(libs.core.ktx)
+    implementation(libs.core.ktx)
     implementation(libs.lifecycle.runtime.ktx)
     implementation(platform(libs.kotlin.bom))
 

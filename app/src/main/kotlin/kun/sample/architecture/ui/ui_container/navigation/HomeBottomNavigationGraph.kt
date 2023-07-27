@@ -6,7 +6,7 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
 import androidx.navigation.navArgument
-import kun.sample.architecture.data.internal.NavScreen
+import com.example.core.model.NavScreen
 import kun.sample.architecture.ui.detail.ImgDetailScreen
 import kun.sample.architecture.ui.home.HomeFavoriteScreen
 import kun.sample.architecture.ui.home.HomeMainScreen
@@ -21,11 +21,12 @@ fun NavGraphBuilder.homeBottomNavigationGraph(
     navigation(startDestination = startDestination, route = NavScreen.MainRoute.route) {
         composable(NavScreen.Home.route) {
             HomeMainScreen { id ->
-                appState.navigate(NavScreen.ImgDetail.toDetailRoute(id))
+                appState.navigateTo(NavScreen.ImgDetail.toDetailRoute(id))
             }
         }
         composable(NavScreen.Favorite.route) {
             HomeFavoriteScreen(onNext = {
+
 //                context.startActivity(Intent(context, Ui_01_MainActivity::class.java))
             })
         }
@@ -46,4 +47,14 @@ fun NavGraphBuilder.homeBottomNavigationGraph(
             }
         }
     }
+
 }
+
+//interface UserScreen() {
+//    // 일반관리
+//    fun normalToEvent(val id : Int) : Intent = Intent()
+//
+//    // 홈
+//
+//    // 채팅
+//}

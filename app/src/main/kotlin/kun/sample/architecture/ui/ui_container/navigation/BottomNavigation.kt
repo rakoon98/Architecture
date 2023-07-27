@@ -14,8 +14,8 @@ import androidx.navigation.NavController
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.currentBackStackEntryAsState
-import kun.sample.architecture.data.internal.BottomNavItem
-import kun.sample.architecture.data.internal.NavScreen
+import com.example.core.model.BottomNavItem
+import com.example.core.model.NavScreen
 
 @Composable
 fun HomeBottomNavigation(navController : NavController) {

@@ -1,9 +1,6 @@
 package kun.sample.architecture.data.remote.adapter
 
-import android.util.Log
-import kotlinx.serialization.json.Json
-import kun.sample.architecture.data.remote.ApiResult
-import kun.sample.architecture.di.network.RetrofitModule.jsonSerializationBuilder
+import com.example.core.network.ApiResult
 import okhttp3.Request
 import okio.IOException
 import okio.Timeout

@@ -1,7 +1,6 @@
 package kun.sample.architecture.data.remote.adapter
 
-import android.util.Log
-import kun.sample.architecture.data.remote.ApiResult
+import com.example.core.network.ApiResult
 import retrofit2.Call
 import retrofit2.CallAdapter
 import retrofit2.Retrofit

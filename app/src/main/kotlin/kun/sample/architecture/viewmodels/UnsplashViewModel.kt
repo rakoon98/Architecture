@@ -1,6 +1,5 @@
 package kun.sample.architecture.viewmodels
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -14,9 +13,9 @@ import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
-import kun.sample.architecture.data.remote.ApiResult
+import com.example.core.network.ApiResult
 import kun.sample.architecture.data.remote.model.UnsplashPhotoModel
-import kun.sample.architecture.data.type.UnsplashOrderType
+import com.example.core.type.UnsplashOrderType
 import kun.sample.architecture.repository.UnsplashRepository
 import javax.inject.Inject
 
