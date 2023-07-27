@@ -86,4 +86,5 @@ dependencies {
     kapt(libs.room.compiler)
 
     implementation(project(":core:featurecontroller"))
+    implementation(project(":core:model"))
 }

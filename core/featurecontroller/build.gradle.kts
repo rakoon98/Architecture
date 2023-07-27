@@ -39,4 +39,5 @@ dependencies {
 
     implementation(project(":feature:ui-01"))
     implementation(project(":feature:ui-02"))
+    implementation(project(":core:model"))
 }
